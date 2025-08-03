@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Config;
+using UnityEngine;
 
 namespace Orbitals
 {
@@ -9,8 +10,7 @@ namespace Orbitals
         private float _orbitRadius;
         private float _orbitAngle;
         
-        // TODO - Make this a config value
-        private const int RotationalMultiplier = 1000;
+        private const int RotationalMultiplier = TornVeilGlobalConfig.RotationalMultiplier;
 
         public void InitializeStation(GameObject parent)
         {

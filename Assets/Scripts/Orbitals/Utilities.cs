@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Config;
 using UnityEngine;
 
 namespace Orbitals
@@ -16,8 +17,8 @@ namespace Orbitals
         public static List<float> GetRandomApoapsides(int count, float multiplier = 1)
         {
             // TODO - At some point move these into a config
-            var lowerRange = 100f * multiplier;
-            var upperRange = 500f * multiplier;
+            var lowerRange = TornVeilGlobalConfig.StarSystemUpperRange * multiplier;
+            var upperRange = TornVeilGlobalConfig.StarSystemLowerRange * multiplier;
 
             List<float> result = new();
 

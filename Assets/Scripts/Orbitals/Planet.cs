@@ -1,4 +1,5 @@
-﻿using Orbitals;
+﻿using Config;
+using Orbitals;
 using UnityEngine;
 
 // ReSharper disable once CheckNamespace
@@ -7,9 +8,7 @@ public class Planet : OrbitalBody
     private Vector3 _parentLocation;
     private float _distanceToParent;
     private float _rotationalSpeed;
-    
-    // TODO - Make this a config value
-    private const int RotationalMultiplier = 1000;
+    private const int RotationalMultiplier = TornVeilGlobalConfig.RotationalMultiplier;
 
 
     private void Awake()
@@ -23,7 +22,9 @@ public class Planet : OrbitalBody
         if (_distanceToParent < 0.1f) _distanceToParent = 0.1f;
 
         // Generic rotational speed, feels about right - not important!
-        _rotationalSpeed = (1f / _distanceToParent) * RotationalMultiplier;
+        _rotationalSpeed = ((1f / (_distanceToParent * _distanceToParent)) * RotationalMultiplier) * 100;
+        
+        Debug.Log($"I am {name} and my rotational speed is: {_rotationalSpeed}");
     }
     
     private void Start()
