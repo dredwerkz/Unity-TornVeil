@@ -3,7 +3,7 @@
     public static class TornVeilGlobalConfig
     {
         /// <summary>
-        ///  RotationalMultiplier for OrbitalBodies, orbiting around its parent and on its own axis.
+        ///  RotationalMultiplier for OrbitalBodies orbiting around their parent and on their own axis.
         ///  A value of 500 is standard, while 50000 make rotation easily visible.
         /// </summary>
         public const int RotationalMultiplier = 500;
